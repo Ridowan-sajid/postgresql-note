@@ -170,7 +170,7 @@
  * means Before 'LE' there must be two character 
  * otherwise it won't print table's data
     
-     `` SELECT * FROM person 
+        SELECT * FROM person 
         WHERE gender ILIKE '__LE';
  
  * ILIKE means ignore case (that means either we put small letter or capital letter it will behave same)

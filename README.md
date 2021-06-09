@@ -111,11 +111,14 @@
 * =	equal
 * <> or !=	not equal
 
-**To use arithmatic operation in cmd**
+**Arithmatic operation**
 
     SELECT 1=1; -> output TRUE
     SELECT 1<>1; -> output FALSE
+    SELECT 10+2; -> 12
+    SELECT 10^3; -> 100
     
+    SELECT price*10 FROM person;
     SELECT * FROM person WHERE id>5;
     
 **TO filter a null value**
@@ -182,6 +185,7 @@
 * MAX() – return the maximum value.
 * MIN() – return the minimum value.
 * SUM() – return the sum of all or distinct values.
+* ROUND() - return round value
 
       SELECT AVG(mark)
       FROM student;
@@ -224,6 +228,46 @@
 * In aggregate function we can't use **WHERE** keyword 
 * That's why we use **HAVING** instead of **WHERE** 
 * but they work same.
+
+**To override a column name**
+
+      SELECT first_name AS surname FROM person;
+      
+**If we won't found any value we will use COALESCE to set our own value as a show piece**
+
+      SELECT COALESCE(email, 'email is not found') AS email FROM person;
+      
+**CONCATENATE**
+
+      SELECT first_name||' '||last_name
+      AS "name_of_people"
+      FROM person;
+
+**Time Stamp**
+
+      SELECT NOW();
+      
+* print current date,time
+
+**Filter time stamp**
+
+      SELECT NOW()::DATE;
+      
+* print current date
+
+**subtracting date(can use MONTHS)
+      
+      SELECT NOW() - INERVAL '1 YEAR';
+
+**To extract individual data from time stamp**
+
+      SELECT EXTRACT(MONTH FROM NOW());
+            
+* print number for month example (2 for february)
+
+
+
+
 
 
 

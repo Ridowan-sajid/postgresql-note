@@ -175,7 +175,44 @@
  
  * ILIKE means ignore case (that means either we put small letter or capital letter it will behave same)
 
+**Aggregate Functions**
+
+* AVG() – return the average value.
+* COUNT() – return the number of values.
+* MAX() – return the maximum value.
+* MIN() – return the minimum value.
+* SUM() – return the sum of all or distinct values.
+
+      SELECT AVG(mark)
+      FROM student;
+      
+* print average mark
+
+      SELECT COUNT(*)
+      FROM student;
+
+* print how many student inserted in database
+
+      SELECT MAX(mark)
+      FROM student;
+      
+* print max mark from all student
+
+      SELECT MIN(mark)
+      FROM student;
+      
+* print min mark from all student
+
+      SELECT SUM(mark)
+      FROM student;
+
+* print total sum of all student mark
+
+ 
+
 **GROUPING BY**
+
+
 
       
 

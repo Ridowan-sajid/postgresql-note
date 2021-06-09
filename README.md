@@ -9,3 +9,9 @@
 * DATE -  stores the dates only
 * TIME - stores the time of day values
 * TIMESTAMP - stores both date and time values
+
+**Two most useable command**
+* \l - to see the list of all database
+* \q - quit
+
+**To Create database**

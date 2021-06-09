@@ -212,6 +212,19 @@
 
 **GROUPING BY**
 
+![](postgresql-count-with-group-by.png)
+
+**HAVING keyword**
+
+      SELECT country_of_birth, COUNT(*)
+      FROM person 
+      GROUP BY country_of_birth
+      HAVING COUNT(*)>5;
+
+* In aggregate function we can't use **WHERE** keyword 
+* That's why we use **HAVING** instead of **WHERE** 
+* but they work same.
+
 
 
       

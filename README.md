@@ -175,7 +175,9 @@
  
  * ILIKE means ignore case (that means either we put small letter or capital letter it will behave same)
 
-**
+**GROUPING BY**
+
+      
 
 
     

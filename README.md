@@ -371,7 +371,9 @@
 
       ALTER TABLE person
       ADD PRIMARY KEY(id);
-      
+
+# Handle Error
+
 **Deal with duplicate key error / exception**
 
 * If we insert a value with duplicate primary key or unique value compiler will give us an error.
@@ -440,6 +442,8 @@
 * and one car can be purchased by only one person **(ONE TO ONE)**
 * If we won't use unique it would be **ONE TO MANY Relationship**
 * because any person can purchase multiple car.
+
+# JOIN KEYWORD
 
 **INNER JOIN**
 

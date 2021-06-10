@@ -443,7 +443,7 @@
 
 **LEFT JOIN**
 
-
+![](postgresql-count-with-group-by.png)
             
       
 

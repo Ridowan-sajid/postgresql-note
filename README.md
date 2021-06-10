@@ -291,7 +291,7 @@
       
 * we can use eveything, which we used with **SELECT** keyword.
 
-#UPDATE KEYWORD
+# UPDATE KEYWORD
 
 **Update column**
       
@@ -341,7 +341,7 @@
                   UNIQUE(name,email)
             ):
        
-# ALTER keyword - can modify only column name
+# ALTER keyword
 
 **To add column in an existing table**
 

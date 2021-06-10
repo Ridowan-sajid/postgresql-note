@@ -146,7 +146,7 @@
    
  * everything will be printed whose id is 2 or 3.
 
-**To select data from a range **
+**To select range of from a table**
   
     SELECT * FROM person 
     WHERE join_date 

@@ -322,7 +322,7 @@
             
   * To add multiple column to unique
   
-       CREATE TABLE person(
+            CREATE TABLE person(
                   .
                   .
                   UNIQUE(name,email)
@@ -383,10 +383,49 @@
 
 **FOREIGN key**
 
+* When we use any table's primary key to another table it is called foreign key 
+
+            CREATE TABLE car(
+                 id BIGSERIAL NOT NULL PRIMARY KEY,
+                 .
+                 .
+            ):
+            
+            CREATE TABLE person(
+                  .
+                  .
+                  car_id INT REFERENCES car(id)
+            ):
+            
+     * In car table id is a primary key
+     * we use car's id (which is a primary key) in person
+     * table as a foreign key. 
+     * Before creating person, we have to create car table to use
+     * car's id as a foreing key
+     * and also have to insert value first in car's table
+    
+**One To One relationship**
       
+            CREATE TABLE car(
+                 id BIGSERIAL NOT NULL PRIMARY KEY,
+                 .
+                 .
+            ):
+            
+            CREATE TABLE person(
+                  .
+                  .
+                  car_id INT REFERENCES car(id),
+                  UNIQUE (car_id)
+            ):
 
+* We set car_id **UNIQUE** ,so that one user can have only one car
+* and one car have only one person **(ONE TO ONE)**
+* If we won't use unique it would be **ONE TO MANY Relationship**
 
+**INNER JOIN**
 
+* 
       
 
 

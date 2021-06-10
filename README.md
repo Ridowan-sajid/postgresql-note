@@ -154,7 +154,7 @@
     SELECT * FROM person 
     WHERE id in (2,3);
    
- * everything will be printed whose id is 2 or 3.
+ * if any person's id = 2 or 3, his data will be printed
 
 **To select a range of data from a table**
   

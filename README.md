@@ -425,7 +425,26 @@
 
 **INNER JOIN**
 
-* 
+![](innerjoin.png)
+
+      SELECT * FROM person
+      JOIN car ON person.car_id=car.id;
+      
+ * Basically **JOIN** help us to link person and car table. 
+ * If person's **car_id** and car's 
+ * **id**'s are same/equal it will print those row's.
+
+            SELECT person.first_name,car.model,car.price
+            FROM person
+            JOIN car ON person.car_id=car.id;
+     * print first name from person
+     * print model from car
+     * print price from car
+
+**LEFT JOIN**
+
+
+            
       
 
 

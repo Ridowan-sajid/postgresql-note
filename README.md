@@ -48,7 +48,11 @@
  
  **To make auto-increment**
  
- * id SERIAL NOT NULL;
+      CREATE TABLE person(
+           id BIGSERIAL NOT NULL;
+           .
+           .
+      ):
  
  **To see all table list**
  
@@ -67,8 +71,8 @@
        1,'Chandler','Bing','MALE',DATE '2021-02-02', 'chandler@gmail.com'
        );
        
- * INSER INTO person() into this bracket we can specify what we will input
- * To insert DATE type values have to specify DATE before writting date,
+ * **INSERT INTO person()** into this bracket we can specify what we will input
+ * To insert DATE type values have to specify **DATE** before writting date,
  
  **To see everything from our Table**
  
@@ -150,7 +154,7 @@
    
  * everything will be printed whose id is 2 or 3.
 
-**To select range of from a table**
+**To select a range of data from a table**
   
     SELECT * FROM person 
     WHERE join_date 
@@ -166,7 +170,7 @@
       
  * % = any number of character.
  * LIKE = equal. (work same way)
- * it will be matched by every perso whom has a email
+ * it will be matched by every person who has an email
  * because every email has some character before @.
 
         SELECT * FROM person 
@@ -189,32 +193,32 @@
 * MAX() – return the maximum value.
 * MIN() – return the minimum value.
 * SUM() – return the sum of all or distinct values.
-* ROUND() - return round value
+* ROUND() - return the round value
 
+     * print average mark
+      
       SELECT AVG(mark)
       FROM student;
       
-* print average mark
+     * print how many student inserted in database
 
       SELECT COUNT(*)
       FROM student;
 
-* print how many student inserted in database
+     * print max mark from all student
 
       SELECT MAX(mark)
       FROM student;
-      
-* print max mark from all student
+
+     * print min mark from all student
 
       SELECT MIN(mark)
       FROM student;
-      
-* print min mark from all student
+ 
+     * print total sum of all student mark
 
       SELECT SUM(mark)
       FROM student;
-
-* print total sum of all student mark
 
  
 
@@ -259,7 +263,7 @@
       
 * print current date
 
-**subtracting date(can use MONTHS)
+**subtracting date(can use MONTHS)**
       
       SELECT NOW() - INERVAL '1 YEAR';
 
@@ -274,6 +278,8 @@
       SELECT first_name,last_name,
       AGE(NOW(),date_of_birth) AS age
       FROM person;
+      
+# DELETE KEYWORD
 
 **To delete all the data from a table**
 
@@ -285,7 +291,14 @@
       
 * we can use eveything, which we used with **SELECT** keyword.
 
-**To update multiple row at one time**
+#UPDATE KEYWORD
+
+**Update column**
+      
+      UPDATE person SET email='schafer@gmail.com'
+      WHERE id = 2;
+      
+**To update multiple column at one time**
 
       UPDATE person SET first_name='Itachi',
       last_name='Uchiha' 
@@ -299,7 +312,7 @@
                   .
             ):
       
-  * To add multiple primary key we will use this way:
+  * To add multiple primary key we will use this way(2nd one):
        
             CREATE TABLE person(
                   id1 ....,
@@ -320,7 +333,7 @@
                   .
             ):
             
-  * To add multiple column to unique
+  * To add multiple column as unique
   
             CREATE TABLE person(
                   .
@@ -376,14 +389,14 @@
       DO UPDATE SET email=EXCLUDED.email;
       
  * This time instead of **DO NOTHING** 
- * it will update.
+ * it will be updated.
  * If we insert a value with same id and different 
  * email , email will be updated.
  * we can set multiple value to update this way.
 
 **FOREIGN key**
 
-* When we use any table's primary key to another table it is called foreign key 
+* When we use any table's primary key to another table it's called foreign key 
 
             CREATE TABLE car(
                  id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -420,8 +433,9 @@
             ):
 
 * We set car_id **UNIQUE** ,so that one user can have only one car
-* and one car have only one person **(ONE TO ONE)**
+* and one car can be purchased by only one person **(ONE TO ONE)**
 * If we won't use unique it would be **ONE TO MANY Relationship**
+* because any person can purchase multiple car.
 
 **INNER JOIN**
 
@@ -431,8 +445,8 @@
       JOIN car ON person.car_id=car.id;
       
  * Basically **JOIN** help us to link person and car table. 
- * If person's **car_id** and car's 
- * **id**'s are same/equal it will print those row's.
+ * If person's **car_id** and car's **id**'s are same/equal 
+ * then it will print those row's.
 
             SELECT person.first_name,car.model,car.price
             FROM person
@@ -447,8 +461,8 @@
             
  * **LEFT JOIN** print all left table property
  * **person JOIN car**
- * print person's property
- * but print equal's property of car
+ * print person's all property
+ * but only print car's property which are same.
 
             SELECT * FROM person
             LEFT JOIN car ON person.car_id=car.id;
@@ -464,48 +478,10 @@
 **Deleting records with foreign key**
 
    * We can't delete a key of a table
-   * when another table is using that as a foreign key 
+   * when another table is using that key as a foreign key 
    * So, to delete a foreign key related table 
    * we have to set null or delete that row 
    * which is using that key as a foreign key.
 
 
 
-
-
-      
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 

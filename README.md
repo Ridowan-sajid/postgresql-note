@@ -443,11 +443,25 @@
 
 **LEFT JOIN**
 
-![](postgresql-count-with-group-by.png)
+![](sql-left-join.png)
             
-      
+ * **LEFT JOIN** print all left table property
+ * **person JOIN car**
+ * print person's property
+ * but print equal's property of car
 
+            SELECT * FROM person
+            LEFT JOIN car ON person.car_id=car.id;
+ 
+      * It will print person table's all row not car table's row
 
+**Deleting records with foreign key**
+
+   * We can't delete a key of a table
+   * when another table is using that as a foreign key 
+   * So, to delete a foreign key related table 
+   * we have to set null or delete that row 
+   * which is using that key as a foreign key.
 
 
 

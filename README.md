@@ -11,17 +11,21 @@
 * TIMESTAMP - stores both date and time values
 
 **Two most useable command**
+
 * \l - to see the list of all database
 * \q - quit
 
 **To Create database**
-* CREATE DATABASE databasename;
+      
+      CREATE DATABASE databasename;
 
 **To connect with database**
+
 * \c databasename
 
 **To delete/drop a database**
-* DROP DATABASE databasename;
+
+      DROP DATABASE databasename;
 
 **TO CREATE table**
       
@@ -264,6 +268,112 @@
       SELECT EXTRACT(MONTH FROM NOW());
             
 * print number for month example (2 for february)
+
+**To get age**
+
+      SELECT first_name,last_name,
+      AGE(NOW(),date_of_birth) AS age
+      FROM person;
+
+**To delete all the data from a table**
+
+      DELETE FROM person;
+
+**To delete with where**
+
+      DELETE FROM person WHERE id=1;
+      
+* we can use eveything, which we used with **SELECT** keyword.
+
+**To update multiple row at one time**
+
+      UPDATE person SET first_name='Itachi',
+      last_name='Uchiha' 
+      WHERE id = 3;
+
+**Adding primary key**
+
+            CREATE TABLE person(
+                  id INT PRIMARY KEY,
+                  .
+                  .
+            ):
+      
+  * To add multiple primary key we will use this way:
+       
+            CREATE TABLE person(
+                  id1 ....,
+                  id2 ....,
+                  PRIMARY KEY (id1, id2)
+            ):
+      
+       * when id1 is not unique nor id2
+       * but if we add both of them it makes an 
+       * unique id which we called **COMPOSITE KEY**
+       * instead of **PRIMARY KEY**
+
+**UNIQUE constraint**
+
+            CREATE TABLE person(
+                  email VARCHAR(50) UNIQUE,
+                  .
+                  .
+            ):
+            
+  * To add multiple column to unique
+  
+       CREATE TABLE person(
+                  .
+                  .
+                  UNIQUE(name,email)
+            ):
+       
+# ALTER keyword - can modify only column name
+
+**To add column in an existing table**
+
+      ALTER TABLE person 
+      ADD COLUMN roll INT NOT NULL;
+
+**To drop column**
+
+      ALTER TABLE person DROP
+      COLUMN roll;
+     
+**To rename column**
+
+      ALTER TABLE person RENAME
+      COLUMN roll TO student_roll;
+
+**To rename a table**
+
+      ALTER TABLE person
+      RENAME TO new_person;
+      
+**Set primary key with ALTER**
+
+      ALTER TABLE person
+      ADD PRIMARY KEY(id);
+      
+**Deal with duplicate key error / exception**
+
+* If we insert a value with duplicate primary key or unique value compiler will give us an error.
+* To solve this:
+
+      INSERT INTO person(id,name) 
+      VALUES(201,'Luffy')
+      ON CONFLICT(id) DO NOTHING:
+      
+     * id have to be unique
+     * Now if we add multiple primary key or unique value 
+     * it won't gives us an error.
+
+**Update value with duplicate**
+
+
+
+
+      
 
 
 

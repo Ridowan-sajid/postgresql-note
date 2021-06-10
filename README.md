@@ -74,6 +74,8 @@
  * **INSERT INTO person()** into this bracket we can specify what we will input
  * To insert DATE type values have to specify **DATE** before writting date,
  
+ # SELECT KEYWORD
+ 
  **To see everything from our Table**
  
     SELECT * FROM person;

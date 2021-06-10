@@ -322,7 +322,7 @@
                   PRIMARY KEY (id1, id2)
             ):
       
-       * when id1 is not unique nor id2
+       * Suppose id1 is not unique nor id2
        * but if we add both of them it makes an 
        * unique id which we called **COMPOSITE KEY**
        * instead of **PRIMARY KEY**

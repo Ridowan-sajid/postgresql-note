@@ -306,6 +306,8 @@
       last_name='Uchiha' 
       WHERE id = 3;
 
+# UNIQUE  
+
 **Adding primary key**
 
             CREATE TABLE person(

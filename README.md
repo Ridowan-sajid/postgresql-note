@@ -455,6 +455,12 @@
  
       * It will print person table's all row not car table's row
 
+**RIGHT JOIN**
+
+![](right-join.png)
+
+* As same as left join 
+
 **Deleting records with foreign key**
 
    * We can't delete a key of a table

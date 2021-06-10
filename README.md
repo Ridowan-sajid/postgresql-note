@@ -391,7 +391,7 @@
       DO UPDATE SET email=EXCLUDED.email;
       
  * This time instead of **DO NOTHING** 
- * it will be updated.
+ * it will update our email.
  * If we insert a value with same id and different 
  * email , email will be updated.
  * we can set multiple value to update this way.

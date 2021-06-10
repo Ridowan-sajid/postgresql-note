@@ -370,6 +370,20 @@
 
 **Update value with duplicate**
 
+      INSERT INTO person(id,name,email)
+      VALUES(201,'Sheldon','sheldon@gmail.com')
+      ON CONFLICT (id)
+      DO UPDATE SET email=EXCLUDED.email;
+      
+ * This time instead of **DO NOTHING** 
+ * it will update.
+ * If we insert a value with same id and different 
+ * email , email will be updated.
+ * we can set multiple value to update this way.
+
+**FOREIGN key**
+
+      
 
 
 

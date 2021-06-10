@@ -422,7 +422,9 @@
      * Before creating person, we have to create car table to use
      * car's id as a foreing key
      * and also have to insert value first in car's table
-    
+  
+# RELATIONSHIP
+  
 **One To One relationship**
       
             CREATE TABLE car(

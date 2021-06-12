@@ -224,7 +224,7 @@
 
  
 
-**GROUPING BY**
+**GROUP BY**
 
 ![](postgresql-count-with-group-by.png)
 

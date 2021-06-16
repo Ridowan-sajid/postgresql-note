@@ -64,7 +64,7 @@
  
  **TO delete/drop table**
             
-       DROP TABLE author;
+       DROP TABLE tablename;
  
  **To insert data into a table**
  

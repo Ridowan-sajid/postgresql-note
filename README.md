@@ -58,7 +58,7 @@
  
  * \d
  
- **To see individual table**
+ **To see individual table structure**
  
  * \d tablename
  

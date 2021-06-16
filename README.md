@@ -62,6 +62,10 @@
  
  * \d tablename
  
+ **TO delete/drop table**
+            
+       DROP TABLE author;
+ 
  **To insert data into a table**
  
        INSERT INTO person( 

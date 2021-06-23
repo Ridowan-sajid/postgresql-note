@@ -91,31 +91,8 @@
 **To see multiple column**
   
      SELECT first_name,last_name FROM person;
-
-**Sorting data**
-
-     SELECT * FROM person ORDER BY first_name ASC/DESC;
-
-**To get unique value**
-  
-    SELECT DISTINCT join_date FROM person;
-    
-**To filter data based on condition**
-
-    SELECT * FROM person
-    WHERE first_name='Chandler';
-    
-* It will give us everything from person if first_name is Chandler
-
-**To filter data based on multiple condition**
-
-    SELECT * FROM person 
-    WHERE first_name='Chandler' AND last_name='Bing';
-    
-* There are two condition base keyword AND & OR..
-* AND = have to match both side.
-* OR = have to match any of the side not both.
-    
+ 
+ 
 **Comparison operator**
 
 * <	less than
@@ -125,7 +102,39 @@
 * =	equal
 * <> or !=	not equal
 
-**Arithmatic operation**
+
+**To filter data based on condition**
+
+    SELECT * FROM person
+    WHERE first_name='Chandler';
+    
+* It will give us everything from person if first_name is Chandler
+    
+**To filter data based on multiple condition**
+
+    SELECT * FROM person 
+    WHERE first_name='Chandler' AND last_name='Bing';
+        
+* There are two condition base keyword AND & OR..
+* AND = have to match both side.
+* OR = have to match any of the side not both.
+
+**To filter a null value**
+
+    SELECT * FROM person WHERE email IS NULL;
+
+
+# Sorting data
+
+     SELECT * FROM person ORDER BY first_name ASC/DESC;
+
+# DISTINCT - to get Unique
+  
+    SELECT DISTINCT join_date FROM person;
+    
+    
+
+# Arithmatic operation
 
     SELECT 1=1; -> output TRUE
     SELECT 1<>1; -> output FALSE
@@ -135,38 +144,36 @@
     SELECT price*10 FROM person;
     SELECT * FROM person WHERE id>5;
     
-**TO filter a null value**
-
-    SELECT * FROM person WHERE email IS NULL;
-    
-**To print a limited data**
+# LIMIT
 
     SELECT * FROM person
     LIMIT 2;
 
-* Only first two row will be printed
+ * Only first two row will be printed. because we set the limit 2
 
-**TO start from any row**
+ **TO start from any row**
 
     SELECT * FROM person 
     OFFSET 5;
     
-* It will print row from 5 number row.
+ * It will print row from 5 number row.
 
-**IN keyword**
+# IN keyword
 
     SELECT * FROM person 
     WHERE id in (2,3);
    
  * if any person's id = 2 or 3, his data will be printed
 
-**To select a range of data from a table**
+# BETWEEN .. AND
   
     SELECT * FROM person 
     WHERE join_date 
     BETWEEN '2019-02-02' AND '2021-03-02'
+    
+   * To select a range of data from a table
 
-**Wild Card / Regular expression**
+# Wild Card / Regular expression
 
 * % = any number of character
 * _ = only one number of character
@@ -247,6 +254,12 @@
   * To concate two variable:
       
             SELECT CONCAT(first,last) FROM Student;
+            
+  **We will use this CONCATENATE instead of previous one (CONCAT)**
+
+      SELECT first_name||' '||last_name
+      AS "name_of_people"
+      FROM person;
   
   * To get the length from a variable:
             
@@ -308,11 +321,11 @@
 
             SELECT MOD(333,22);
 
-**GROUP BY**
+# GROUP BY
 
 ![](postgresql-count-with-group-by.png)
 
-**HAVING keyword**
+# HAVING keyword
 
       SELECT country_of_birth, COUNT(*)
       FROM person 
@@ -331,11 +344,7 @@
 
       SELECT COALESCE(email, 'email is not found') AS email FROM person;
       
-**CONCATENATE**
 
-      SELECT first_name||' '||last_name
-      AS "name_of_people"
-      FROM person;
       
 # DELETE KEYWORD
 

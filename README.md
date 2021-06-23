@@ -206,10 +206,11 @@
       SELECT AVG(mark)
       FROM student;
       
-     * print how many student inserted in database(Row wise)
+     * print how many student inserted in database(Row wise)/To do column wise have to pass column name in COUNT() function
 
       SELECT COUNT(*)
       FROM student;
+            
 
      * print max mark from all student
 
@@ -226,7 +227,76 @@
       SELECT SUM(mark)
       FROM student;
 
+ # Single Row function:
  
+**Case Conversion**
+
+ * To make whole word uppercase
+ 
+            SELECT UPPER(first) FROM Student;
+ 
+ * To make whole word lower case
+ 
+            SELECT LOWER(first) FROM Student;
+      
+ * To make first letter capitalize:
+ 
+            SELECT INITCAP(first) FROM Student;
+            
+**Character functions**
+      
+  * To concate two variable:
+      
+            SELECT CONCAT(first,last) FROM Student;
+  
+  * To get the length from a variable:
+            
+            SELECT LENGTH(first) FROM Student;
+            
+  * To get the slice from a sentence:
+
+            SELECT SUBSTR('Hello gang',1,4);
+            
+  * To cut down the blank space:
+  
+            SELECT TRIM('  Hello    ') FROM Student;
+            
+            
+**Date functions**
+   
+   * print current date,time:
+
+            SELECT NOW();
+
+   * Filter out current date:(Can use TIME instead of DATE to get time)
+
+             SELECT NOW()::DATE;
+
+   * subtracting date:
+
+      * To subtract from current date
+      
+            SELECT NOW() - TIMESTAMP '2011-04-3';
+            
+      * To subtract our own two individual date
+      
+            SELECT '2012-06-13 10:38:40' - TIMESTAMP '2011-04-30 14:38:40';
+            
+      
+
+ * To extract individual data from time stamp **print number for month example (2 for february)**
+
+            SELECT EXTRACT(MONTH FROM NOW());
+            
+
+ * To get age
+
+            SELECT first_name,last_name,
+            AGE(NOW(),date_of_birth) AS age
+            FROM person;
+
+ **         
+  
 
 **GROUP BY**
 
@@ -256,34 +326,6 @@
       SELECT first_name||' '||last_name
       AS "name_of_people"
       FROM person;
-
-**Time Stamp**
-
-      SELECT NOW();
-      
-* print current date,time
-
-**Filter time stamp**
-
-      SELECT NOW()::DATE;
-      
-* print current date
-
-**subtracting date(can use MONTHS)**
-      
-      SELECT NOW() - INERVAL '1 YEAR';
-
-**To extract individual data from time stamp**
-
-      SELECT EXTRACT(MONTH FROM NOW());
-            
-* print number for month example (2 for february)
-
-**To get age**
-
-      SELECT first_name,last_name,
-      AGE(NOW(),date_of_birth) AS age
-      FROM person;
       
 # DELETE KEYWORD
 
@@ -309,6 +351,12 @@
       UPDATE person SET first_name='Itachi',
       last_name='Uchiha' 
       WHERE id = 3;
+      
+**To update a date**
+
+      UPDATE person
+      SET date_of_birth = DATE '2020-08-01' 
+      WHERE first='Corey';
 
 # UNIQUE  
 

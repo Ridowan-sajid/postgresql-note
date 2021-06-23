@@ -192,7 +192,7 @@
  
  * ILIKE means ignore case (that means either we put small letter or capital letter it will behave same)
 
-**Aggregate Functions**
+# Aggregate Functions
 
 * AVG() – return the average value.
 * COUNT() – return the number of values.
@@ -206,7 +206,7 @@
       SELECT AVG(mark)
       FROM student;
       
-     * print how many student inserted in database
+     * print how many student inserted in database(Row wise)
 
       SELECT COUNT(*)
       FROM student;

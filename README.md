@@ -199,7 +199,6 @@
 * MAX() – return the maximum value.
 * MIN() – return the minimum value.
 * SUM() – return the sum of all or distinct values.
-* ROUND() - return the round value
 
      * print average mark
       
@@ -257,9 +256,11 @@
 
             SELECT SUBSTR('Hello gang',1,4);
             
+       * We can ignore table name. because we didn't grabe any data from table.
+            
   * To cut down the blank space:
   
-            SELECT TRIM('  Hello    ') FROM Student;
+            SELECT TRIM('  Hello    ');
             
             
 **Date functions**
@@ -295,8 +296,17 @@
             AGE(NOW(),date_of_birth) AS age
             FROM person;
 
- **         
-  
+ **Number functions**
+ 
+ * ROUND() - return the round value:
+ 
+            SELECT ROUND(AVG(mark),2) FROM Student;
+            
+      * Because of 2 it will give us 2 value after decilam. If we won't give any number instead of 2 it won't show th number after decimal.
+      
+  * To get Mod value
+
+            SELECT MOD(333,22);
 
 **GROUP BY**
 

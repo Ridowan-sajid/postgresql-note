@@ -443,6 +443,24 @@
       ALTER TABLE person
       ADD PRIMARY KEY(id);
 
+**Set unique constraint with ALTER**
+      
+      ALTER TABLE person 
+      ADD CONSTRAINT uni_em UNIQUE(email);
+      
+**To drop constraint**
+      
+      ALTER TABLE person 
+      DROP CONSTRAINT uni_em;
+
+**add condition with CHECK**
+
+      ALTER TABLE person 
+      ADD CONSTRAINT gender_con
+      CHECK(gender='FEMALE' OR gender='MALE');
+      
+ * Now we can't use gender except MALE or FEMALE. 
+
 # Handle Error
 
 **Deal with duplicate key error / exception**
